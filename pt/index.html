@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidade — Invoice Bulk Downloader for Amazon</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">Invoice Bulk Downloader for Amazon</a>
+    <nav>
+      <a href="../index.html" >English</a>
+      <a href="index.html" aria-current="page">Português</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Política de privacidade — Invoice Bulk Downloader for Amazon</h1>
+    <p class="muted">Última atualização: 25 de novembro de 2026.</p>
+    
+    <p>O <strong>Invoice Bulk Downloader for Amazon</strong> («a extensão») é uma ferramenta independente publicada por Artur Santos. Não é afiliada, endossada nem patrocinada pela Amazon.</p>
+    <h2>O que a extensão faz</h2>
+    <p>Quando clica no ícone da extensão na página «As minhas encomendas» da Amazon e carrega em <strong>Descarregar faturas</strong>, a extensão lê o histórico de encomendas e os documentos de fatura no separador da Amazon que tem aberto, com a sessão em que já está autenticado. Guarda as faturas e um resumo CSV no seu computador.</p>
+    <h2>Dados que recolhemos</h2>
+    <p><strong>Não recolhemos os dados das suas encomendas Amazon.</strong> Não operamos um servidor para a função de descarregar faturas. As suas encomendas, faturas, moradas, dados de pagamento e credenciais da Amazon nunca nos são enviados.</p>
+    <ul>
+      <li>A extensão nunca vê nem guarda a sua palavra-passe da Amazon.</li>
+      <li>Todo o processamento (ler páginas, criar o ZIP e o CSV) acontece localmente no browser.</li>
+      <li>Os pedidos são feitos apenas ao sítio da Amazon em que está (e, se conceder a permissão opcional, aos ficheiros temporários de fatura da Amazon em <code>s3.amazonaws.com/generated_invoices_v2/</code>), só quando inicia uma descarga, um de cada vez e com pausas.</li>
+      <li>A recompressão e a junção opcional de PDF também correm apenas no browser. Nada é enviado para um serviço de conversão.</li>
+    </ul>
+    <h2>Dados guardados no seu dispositivo</h2>
+    <p>A extensão guarda, apenas no armazenamento local da extensão: um contador mensal de ficheiros de fatura para o limite gratuito; o estado do plano, quando o Pro estiver ativo; e as preferências de datas e qualidade. Pode apagar estes dados removendo a extensão.</p>
+    <h2>Pagamentos</h2>
+    <p>Se comprar o Pro, o pagamento é tratado pela <a href="https://extensionpay.com">ExtensionPay</a>, ao abrigo da sua própria política de privacidade. A ExtensionPay (e o respetivo processador de pagamentos) pode receber o seu endereço de e-mail e dados de pagamento para processar a compra e verificar a licença. Nunca recebemos os dados do seu cartão. A extensão recebe apenas um estado pago/não pago.</p>
+    <p>O Pro custa 3,99 USD por mês ou 24 USD por ano. Não existe plano trimestral. O plano gratuito mantém-se em 20 ficheiros de fatura por mês.</p>
+    <h2>Formulário de contacto</h2>
+    <p>O formulário abaixo (e o mesmo formulário nas Definições da extensão) envia o assunto, a mensagem e o endereço de resposta opcional através de um serviço de reencaminhamento (<a href="https://web3forms.com">Web3Forms</a>, sujeito à política de privacidade desse serviço) para que o editor possa ler a mensagem. Esta página não publica um endereço de e-mail de contacto. Se indicar um endereço de resposta, é usado apenas para lhe responder.</p>
+    <h2>Permissões</h2>
+    <table>
+      <thead><tr><th>Permissão</th><th>Motivo</th></tr></thead>
+      <tbody>
+        <tr><td><code>activeTab</code></td><td>Aceder ao separador da Amazon só depois de clicar no ícone da extensão nesse separador.</td></tr>
+        <tr><td><code>scripting</code></td><td>Executar o descarregador nesse separador quando carrega no botão.</td></tr>
+        <tr><td><code>storage</code></td><td>Guardar no dispositivo o contador mensal, as preferências e o estado da licença.</td></tr>
+        <tr><td><code>downloads</code></td><td>Alternativa: guardar uma fatura através do gestor de transferências do browser quando não pode ser obtida da página.</td></tr>
+      </tbody>
+    </table>
+    <p>A extensão não tem acesso permanente a nenhum sítio. Pode ser pedida uma autorização opcional para ficheiros de fatura da Amazon no S3 (para os incluir no ZIP) e para o serviço de reencaminhamento quando envia uma mensagem.</p>
+    <h2>Utilização limitada</h2>
+    <p>A informação recebida é usada apenas para o propósito único da extensão (descarregar as suas próprias faturas) e para ler as mensagens que escolher enviar. Não vendemos, transferimos nem usamos dados para publicidade, avaliação de crédito ou qualquer outro fim não relacionado.</p>
+    <h2>Alterações</h2>
+    <p>Atualizaremos esta página se as práticas de dados da extensão mudarem. Para contactar o editor, use o formulário abaixo ou o formulário Enviar mensagem nas Definições da extensão.</p>
+
+    <section class="card" id="contact">
+      <h2>Enviar mensagem</h2>
+      <p>Escreva um assunto e uma mensagem. Pode deixar um endereço de resposta, se quiser.</p>
+      <form id="contact-form" data-sent="Mensagem enviada" data-failed="Não foi enviada, tente novamente">
+        <label>Assunto<input id="subject" type="text" required maxlength="200"></label>
+        <label>Mensagem<textarea id="message" required maxlength="8000"></textarea></label>
+        <label>E-mail de resposta (opcional)<input id="reply" type="email" maxlength="200" autocomplete="email"></label>
+        <div class="hp" aria-hidden="true"><input id="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" id="send">Enviar mensagem</button>
+        <p id="status" class="muted" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>Not affiliated with or endorsed by Amazon. Amazon is a trademark of Amazon.com, Inc. or its affiliates.</footer>
+  <script src="../site-config.js"></script>
+  <script src="../form.js"></script>
+</body>
+</html>
