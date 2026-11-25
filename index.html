@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Invoice Bulk Downloader for Amazon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">Invoice Bulk Downloader for Amazon</a>
+    <nav>
+      <a href="index.html" aria-current="page">English</a>
+      <a href="pt/index.html" >Português</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Privacy Policy — Invoice Bulk Downloader for Amazon</h1>
+    <p class="muted">Last updated 25 November 2026.</p>
+    
+    <p><strong>Invoice Bulk Downloader for Amazon</strong> ("the extension") is an independent tool published by Artur Santos. It is not affiliated with, endorsed by, or sponsored by Amazon.</p>
+    <h2>What the extension does</h2>
+    <p>When you click the extension icon on your Amazon "Your Orders" page and press <strong>Download invoices</strong>, the extension reads your order history and invoice documents from the Amazon tab you have open, using the session you are already signed in with. It saves the invoices and a CSV summary to your computer.</p>
+    <h2>Data we collect</h2>
+    <p><strong>None of your Amazon order data is collected by us.</strong> We do not operate a server for this extension's download feature. Your orders, invoices, addresses, payment details and Amazon credentials are never sent to us.</p>
+    <ul>
+      <li>The extension never sees or stores your Amazon password.</li>
+      <li>All processing (reading pages, building the ZIP and CSV) happens locally in your browser.</li>
+      <li>Requests are made only to the Amazon site you are on (and, if you grant the optional permission, to Amazon's short-lived invoice files on <code>s3.amazonaws.com/generated_invoices_v2/</code>), only when you start a download, one at a time and with pauses between them.</li>
+      <li>Optional PDF recompression and merging also run entirely in your browser. Nothing is uploaded to a conversion service.</li>
+    </ul>
+    <h2>Data stored on your device</h2>
+    <p>The extension stores, in your browser's local extension storage only: a monthly invoice-file counter for the free-plan limit; your plan status from the payment provider once Pro is active; and the date-range and quality preferences you last chose. You can delete this data by removing the extension.</p>
+    <h2>Payments</h2>
+    <p>If you buy Pro, payment is handled by <a href="https://extensionpay.com">ExtensionPay</a>, under its own privacy policy. ExtensionPay (and its payment processor) may receive your email address and payment details to process the purchase and verify your licence. We never receive your card details. The extension only receives a yes/no paid status.</p>
+    <p>Pro costs 3.99 USD per month or 24 USD per year. There is no quarterly plan. The free tier remains 20 invoice files per month.</p>
+    <h2>Contact form</h2>
+    <p>The form below (and the same form in the extension Settings) sends your subject, message, and optional reply address through a form-forwarding service (<a href="https://web3forms.com">Web3Forms</a>, under that service's privacy policy) so the publisher can read your message. This page does not publish a contact email address. If you include a reply address, it is used only to answer you.</p>
+    <h2>Permissions</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><code>activeTab</code></td><td>Access the Amazon tab only after you click the extension icon there.</td></tr>
+        <tr><td><code>scripting</code></td><td>Run the downloader in that tab when you press the button.</td></tr>
+        <tr><td><code>storage</code></td><td>Keep the monthly free-plan counter, preferences and licence status on your device.</td></tr>
+        <tr><td><code>downloads</code></td><td>Fallback: save an invoice through the browser's download manager when it cannot be fetched from the page.</td></tr>
+      </tbody>
+    </table>
+    <p>The extension has no permanent access to any website. Optional, one-time access may be requested for Amazon invoice files on S3 (so they can go in the ZIP) and for the form-forwarding service when you submit a message.</p>
+    <h2>Limited use</h2>
+    <p>Information received is used only to provide the extension's single purpose (downloading your own invoices) and to read messages you choose to send. We do not sell, transfer, or use data for advertising, creditworthiness or any unrelated purpose.</p>
+    <h2>Changes</h2>
+    <p>We will update this page if the extension's data practices change. To contact the publisher, use the form below or the Send message form in the extension Settings.</p>
+
+    <section class="card" id="contact">
+      <h2>Send message</h2>
+      <p>Write a subject and a message. You may optionally leave a reply address.</p>
+      <form id="contact-form" data-sent="Message sent" data-failed="Not sent, try again">
+        <label>Subject<input id="subject" type="text" required maxlength="200"></label>
+        <label>Message<textarea id="message" required maxlength="8000"></textarea></label>
+        <label>Reply email (optional)<input id="reply" type="email" maxlength="200" autocomplete="email"></label>
+        <div class="hp" aria-hidden="true"><input id="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" id="send">Send message</button>
+        <p id="status" class="muted" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>Not affiliated with or endorsed by Amazon. Amazon is a trademark of Amazon.com, Inc. or its affiliates.</footer>
+  <script src="site-config.js"></script>
+  <script src="form.js"></script>
+</body>
+</html>
